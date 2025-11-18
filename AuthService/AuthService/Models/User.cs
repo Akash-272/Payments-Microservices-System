@@ -5,7 +5,7 @@ namespace AuthService.API.Models
     public class User
     {
         [Key]
-        public Guid Id { get; set; } = Guid.NewGuid();
+        public int Id { get; set; }
 
         [Required]
         [MaxLength(150)]

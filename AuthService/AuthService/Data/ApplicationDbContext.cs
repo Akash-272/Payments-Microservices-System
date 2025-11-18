@@ -15,6 +15,7 @@ namespace AuthService.API.Data
                 .HasIndex(u => u.Email)
                 .IsUnique();
 
+
             base.OnModelCreating(modelBuilder);
         }
     }

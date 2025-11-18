@@ -14,9 +14,21 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// DbContext - SQLite for dev portability
+// DbContext - SQL Server (match your connection string)
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+// Identity - store users/roles in EF
+//builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
+//{
+//    // optional: tighten or relax password rules here
+//    options.Password.RequireDigit = true;
+//    options.Password.RequireLowercase = true;
+//    options.Password.RequireUppercase = false;
+//    options.Password.RequiredLength = 6;
+//})
+//    .AddEntityFrameworkStores<ApplicationDbContext>()
+//    .AddDefaultTokenProviders();
 
 // DI - repositories & services
 builder.Services.AddScoped<IUserRepository, UserRepository>();
@@ -56,12 +68,9 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
-builder.Services.AddIdentity<IdentityUser, IdentityRole>()
-    .AddEntityFrameworkStores<ApplicationDbContext>();
-
 var app = builder.Build();
 
-// Ensure DB created
+// Ensure DB created / apply migrations
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
@@ -74,9 +83,12 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-// Middleware order is critical
+app.UseHttpsRedirection();
+
+// Middleware order: Authentication -> Authorization
 app.UseAuthentication();
 app.UseAuthorization();
+
 app.MapControllers();
 
 app.Run();
