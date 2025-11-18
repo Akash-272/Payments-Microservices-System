@@ -1,28 +1,34 @@
 {
   "format": 1,
   "restore": {
-    "D:\\projects\\microservices\\Payments-Microservices-System\\AuthService\\AuthService\\AuthService.csproj": {}
+    "D:\\Practice Projectd\\Payment Microservices\\AuthService\\AuthService\\AuthService.csproj": {}
   },
   "projects": {
-    "D:\\projects\\microservices\\Payments-Microservices-System\\AuthService\\AuthService\\AuthService.csproj": {
+    "D:\\Practice Projectd\\Payment Microservices\\AuthService\\AuthService\\AuthService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\projects\\microservices\\Payments-Microservices-System\\AuthService\\AuthService\\AuthService.csproj",
+        "projectUniqueName": "D:\\Practice Projectd\\Payment Microservices\\AuthService\\AuthService\\AuthService.csproj",
         "projectName": "AuthService",
-        "projectPath": "D:\\projects\\microservices\\Payments-Microservices-System\\AuthService\\AuthService\\AuthService.csproj",
-        "packagesPath": "C:\\Users\\akash\\.nuget\\packages\\",
-        "outputPath": "D:\\projects\\microservices\\Payments-Microservices-System\\AuthService\\AuthService\\obj\\",
+        "projectPath": "D:\\Practice Projectd\\Payment Microservices\\AuthService\\AuthService\\AuthService.csproj",
+        "packagesPath": "C:\\Users\\akashn\\.nuget\\packages\\",
+        "outputPath": "D:\\Practice Projectd\\Payment Microservices\\AuthService\\AuthService\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\akash\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\akashn\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -40,7 +46,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
@@ -98,7 +105,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
